@@ -1,9 +1,13 @@
 import { InputText } from 'src/entities/inputText.entity';
 import { Table, Column , Model , DataType } from "sequelize-typescript";
+
+
+
+console.log("testing",InputText.primaryKeyAttribute);
+
 @Table({
     tableName:'input_text_values'
 })
-
 export class InputTextValue extends Model{
     @Column({   
         type: DataType.INTEGER,
@@ -19,7 +23,7 @@ export class InputTextValue extends Model{
         allowNull: false,
         references:{
             model: InputText,
-            key: InputText.primaryKeyAttribute
+            key: 'input_text_id'
         }
     })
     input_text_id: String;

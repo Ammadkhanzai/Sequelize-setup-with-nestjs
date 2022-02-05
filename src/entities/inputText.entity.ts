@@ -1,17 +1,21 @@
-import { Table ,Model , Column, DataType } from "sequelize-typescript";
+import { Table ,Model , Column, DataType, AutoIncrement, PrimaryKey, Unique } from "sequelize-typescript";
 
 @Table({
     tableName:'input_texts'
 })
 export class InputText extends Model{
 
+    // @AutoIncrement
+    @PrimaryKey
+    @Unique
+    @AutoIncrement
     @Column({   
         type: DataType.INTEGER,
-        allowNull: false,
-        autoIncrement: true,
-        unique: true,
-        primaryKey: true,
-        field: 'input_text_id'
+        // allowNull: false,
+        // autoIncrement: true,
+        // unique: true,
+        // primaryKey: true,
+        
     })
     input_text_id: String;
 

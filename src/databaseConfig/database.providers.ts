@@ -30,6 +30,7 @@ export const databaseProviders = [{
             config = databaseConfig.development;
       }
       const sequelize = new Sequelize(config);
+      await sequelize.drop();
       sequelize.addModels(
          [
             User,
@@ -45,6 +46,7 @@ export const databaseProviders = [{
          ]
       );
       await sequelize.sync();
+      
       return sequelize;
    },
 }];
