@@ -1,6 +1,6 @@
 import { Injectable , Inject , NotFoundException } from "@nestjs/common";
 import { CreateUserDto } from "./dto/createUser.dto";
-import { LoginDto } from "./dto/login.dto";
+import { LoginDto } from "../logins/login.dto";
 import { User } from "src/entities/user.entity";
 import { Login } from "src/entities/login.entity";
 

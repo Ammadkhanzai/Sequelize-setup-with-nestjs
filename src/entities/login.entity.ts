@@ -1,4 +1,5 @@
 import { Table, Column, Model, DataType } from 'sequelize-typescript';
+import { IntegerDataType } from 'sequelize/dist';
 
 @Table({
     tableName:'logins'
@@ -11,7 +12,7 @@ export class Login extends Model<Login>{
         unique: true,
         primaryKey: true,
     })
-    login_id: string;
+    login_id: IntegerDataType;
 
     @Column({
         type: DataType.INTEGER,
@@ -20,18 +21,18 @@ export class Login extends Model<Login>{
             key: 'user_id',
         }
     })
-    user_id: string;  
+    user_id: IntegerDataType;  
 
     @Column({
         type: DataType.DATE,
         allowNull: false,
         defaultValue:DataType.NOW,
     })
-    timein: string;   
+    timein: Date;   
 
     @Column({
         type: DataType.DATE,
         allowNull: true,
     })
-    timeout: string; 
+    timeout: Date; 
 }

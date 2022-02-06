@@ -11,6 +11,12 @@ import { RolePermissionPivot } from 'src/entities/rolePermissionPivot.entity';
 import { Role } from 'src/Entities/role.entity';
 import { UserRolePivot } from 'src/entities/userRolePivot.entity';
 import { InputTextValue } from 'src/entities/inputTextValue.entity';
+import { InputNumber } from 'src/entities/inputNumber.entity';
+import { InputNumberValue } from 'src/entities/inputNumberValue.entity';
+import { InputEmail } from 'src/entities/inputEmail.entity';
+import { InputEmailValue } from 'src/entities/inputEmailValue.entity';
+import { InputSelect } from 'src/entities/inputSelect.entity';
+import { InputSelectValue } from 'src/entities/inputSelectValue.entity';
 
 export const databaseProviders = [{
    provide: 'SEQUELIZE',
@@ -30,7 +36,7 @@ export const databaseProviders = [{
             config = databaseConfig.development;
       }
       const sequelize = new Sequelize(config);
-      await sequelize.drop();
+      sequelize.drop();
       sequelize.addModels(
          [
             User,
@@ -42,6 +48,12 @@ export const databaseProviders = [{
             UserRolePivot,
             InputText,
             InputTextValue,
+            InputNumber,
+            InputNumberValue,
+            InputEmail,
+            InputEmailValue,
+            InputSelect,
+            InputSelectValue,
 
          ]
       );

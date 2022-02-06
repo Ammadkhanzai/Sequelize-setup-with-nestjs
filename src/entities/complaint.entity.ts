@@ -1,3 +1,4 @@
+import { IntegerDataType } from 'sequelize/dist';
 import { Table , Column , Model , DataType } from "sequelize-typescript";
 
 @Table({ tableName: 'complaints' })
@@ -10,7 +11,7 @@ export class Complaint extends Model {
         unique: true,
         primaryKey: true,
     })
-    complaint_id: string;
+    complaint_id: IntegerDataType;
 
     @Column({
         type: DataType.INTEGER,
@@ -19,7 +20,7 @@ export class Complaint extends Model {
             key: 'user_id',
         }
     })
-    user_id : string;
+    user_id : IntegerDataType;
 
     @Column({
         type: DataType.UUID,
@@ -46,6 +47,5 @@ export class Complaint extends Model {
         allowNull: false,
     })
     status : string;
-
 
 }

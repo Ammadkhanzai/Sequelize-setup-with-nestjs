@@ -1,9 +1,10 @@
+import { IntegerDataType } from 'sequelize/dist';
 import { IsEmail, IsNotEmpty } from 'class-validator';
 export class LoginDto {
     @IsNotEmpty()
-    readonly user_id: string;
+    readonly user_id: IntegerDataType;
     @IsNotEmpty()
-    readonly timein : string;
+    readonly timein : Date;
 
 
     

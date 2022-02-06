@@ -1,3 +1,4 @@
+import { IntegerDataType } from 'sequelize/dist';
 
 import { Table, Column , Model , DataType } from "sequelize-typescript";
 
@@ -13,7 +14,7 @@ export class Role extends Model {
         unique: true,
         primaryKey: true,
     })
-    role_id: string;
+    role_id: IntegerDataType;
 
     @Column({
         type: DataType.STRING,

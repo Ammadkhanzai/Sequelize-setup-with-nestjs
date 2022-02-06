@@ -1,3 +1,4 @@
+import { IntegerDataType } from 'sequelize/dist';
 import { Table, Column , Model , DataType  } from "sequelize-typescript";
 
 @Table({
@@ -12,7 +13,7 @@ export class Permission extends Model {
         unique: true,
         primaryKey: true,
     })
-    permission_id: string;
+    permission_id: IntegerDataType;
 
     @Column({
         type: DataType.STRING,

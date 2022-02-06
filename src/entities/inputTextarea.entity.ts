@@ -1,24 +1,19 @@
 import { IntegerDataType } from 'sequelize/dist';
-import { Table ,Model , Column, DataType, AutoIncrement, PrimaryKey, Unique } from "sequelize-typescript";
+import { Table, Column , Model , DataType } from "sequelize-typescript";
 
 @Table({
-    tableName:'input_texts'
+    tableName:'input_textareas'
 })
-export class InputText extends Model{
+export class InputTextarea extends Model {
 
-    // @AutoIncrement
-    // @PrimaryKey
-    // @Unique
-    // @AutoIncrement
     @Column({   
         type: DataType.INTEGER,
         allowNull: false,
         autoIncrement: true,
         unique: true,
         primaryKey: true,
-        
     })
-    input_text_id: IntegerDataType;
+    input_textarea_id: IntegerDataType;
 
     @Column({
         type: DataType.STRING,
@@ -44,11 +39,9 @@ export class InputText extends Model{
     })
     default: string;
     
-
     @Column({
         type: DataType.BOOLEAN,
         defaultValue:false,
     })
     required: Boolean;
-
 }

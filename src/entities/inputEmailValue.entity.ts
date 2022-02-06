@@ -1,12 +1,11 @@
 import { IntegerDataType } from 'sequelize/dist';
+import { InputEmail } from 'src/entities/inputEmail.entity';
 import { Table, Column , Model , DataType } from "sequelize-typescript";
-import { InputText } from 'src/entities/inputText.entity';
-
 
 @Table({
-    tableName:'input_text_values'
+    tableName:'input_email_values'
 })
-export class InputTextValue extends Model{
+export class InputEmailValue extends Model{
     @Column({   
         type: DataType.INTEGER,
         allowNull: false,
@@ -14,15 +13,21 @@ export class InputTextValue extends Model{
         unique: true,
         primaryKey: true,
     })
-    input_text_value_id: IntegerDataType;
+    input_email_value_id: IntegerDataType;
 
     @Column({   
         type: DataType.INTEGER,
         allowNull: false,
         references:{
-            model: InputText,
-            key: 'input_text_id'
+            model: InputEmail,
+            key: 'input_email_id'
         }
     })
-    input_text_id: IntegerDataType;
+    input_number_id: IntegerDataType;
+
+    @Column({
+        type: DataType.STRING,
+        allowNull: false,
+    })
+    value: String;
 }

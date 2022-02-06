@@ -1,3 +1,4 @@
+import { IntegerDataType } from 'sequelize/dist';
 import { Table, Column, Model, DataType } from 'sequelize-typescript';
 
 @Table({
@@ -12,7 +13,7 @@ export class User extends Model<User>{
         unique: true,
         primaryKey: true,
     })
-    user_id: string;
+    user_id: IntegerDataType;
 
     @Column({
         type: DataType.STRING,
@@ -65,9 +66,8 @@ export class User extends Model<User>{
     type: string;
 
     @Column({
-        type: DataType.ENUM,
-        values: ['TRUE', 'FALSE'],
+        type: DataType.BOOLEAN,
         allowNull: false,
     })
-    status: string;
+    status: Boolean;
 }

@@ -1,40 +1,35 @@
 import { IntegerDataType } from 'sequelize/dist';
-import { Table ,Model , Column, DataType, AutoIncrement, PrimaryKey, Unique } from "sequelize-typescript";
+import { Table , Column, Model , DataType } from "sequelize-typescript";
 
-@Table({
-    tableName:'input_texts'
+
+@Table({ 
+    tableName:'input_emails'
 })
-export class InputText extends Model{
-
-    // @AutoIncrement
-    // @PrimaryKey
-    // @Unique
-    // @AutoIncrement
-    @Column({   
+export class InputEmail extends Model {
+    
+    @Column({
         type: DataType.INTEGER,
-        allowNull: false,
         autoIncrement: true,
         unique: true,
-        primaryKey: true,
-        
+        primaryKey:true,
     })
-    input_text_id: IntegerDataType;
+    input_email_id: IntegerDataType;
 
     @Column({
         type: DataType.STRING,
-        allowNull:false,
+        allowNull: false,
     })
     title: string;
 
     @Column({
         type: DataType.INTEGER,
-        allowNull:false,
+        allowNull: false,
     })
     max_length: IntegerDataType;
 
     @Column({
         type: DataType.INTEGER,
-        allowNull:false,
+        allowNull: false,
     })
     min_length: IntegerDataType;
 
@@ -52,3 +47,5 @@ export class InputText extends Model{
     required: Boolean;
 
 }
+
+

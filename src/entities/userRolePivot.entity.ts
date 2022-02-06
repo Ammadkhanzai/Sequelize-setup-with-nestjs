@@ -1,3 +1,6 @@
+import { Role } from 'src/Entities/role.entity';
+import { User } from 'src/entities/user.entity';
+import { IntegerDataType } from 'sequelize/dist';
 import { Table , Column , Model , DataType, AllowNull } from "sequelize-typescript";
 
 @Table({
@@ -11,25 +14,25 @@ export class UserRolePivot extends Model {
         unique: true,
         primaryKey: true,
     })
-    user_role_pivot_id: String;
+    user_role_pivot_id: IntegerDataType;
 
     @Column({
         type: DataType.INTEGER,
         allowNull:false,
         references : {
-            model: 'Users',
+            model: User,
             key: 'user_id'
         }
     })
-    user_id: string;
+    user_id: IntegerDataType;
 
     @Column({
         type: DataType.INTEGER,
         allowNull:false,
         references : {
-            model: 'Roles',
+            model: Role,
             key: 'role_id'
         }
     })
-    role_id: string;
+    role_id: IntegerDataType;
 }

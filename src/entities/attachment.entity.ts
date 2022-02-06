@@ -2,6 +2,8 @@ import { Table ,  Column , Model , DataType} from "sequelize-typescript";
 
 @Table 
 export class Attachment extends Model {
+
+    // we can also use decorator like @Primarykey @Unique
     @Column({
         type: DataType.INTEGER,
         allowNull: false,
@@ -10,8 +12,5 @@ export class Attachment extends Model {
         primaryKey: true,
     })
     attachment_id: string;
-
-    
-
 
 }

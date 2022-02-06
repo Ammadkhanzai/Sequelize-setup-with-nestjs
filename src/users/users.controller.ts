@@ -2,7 +2,7 @@
 import { Controller , Post , Body, Get , Param , Patch} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/createUser.dto';
-import { LoginDto } from './dto/login.dto';
+import { LoginDto } from '../logins/login.dto';
 
 
 
